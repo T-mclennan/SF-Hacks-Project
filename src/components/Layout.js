@@ -3,7 +3,7 @@ import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-function Layout({children}) {
+const Layout = ({children}) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleSidebar = () => {
@@ -14,7 +14,7 @@ function Layout({children}) {
       <Navbar toggleSidebar={toggleSidebar}/>
       <Sidebar toggleSidebar={toggleSidebar} isOpen={isOpen}/>
       {children}
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 }
