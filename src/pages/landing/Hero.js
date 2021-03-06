@@ -2,11 +2,13 @@ import React from 'react';
 import HeaderImage from '../../assets/hero-img.svg';
 import TextLoop from "react-text-loop";
 import {TextLoopValues} from '../../constants/config';
+import { useHistory } from "react-router-dom";
 import './Landing.css';
 
 function Hero() {
 
-  console.log(TextLoopValues)
+  const history = useHistory();
+
   return (
     <section className="hero">
       
@@ -21,7 +23,7 @@ function Hero() {
               interval={5500}
             />
             </h4>
-            <button to="/contact" className="btn">
+            <button onClick={() => history.push("/browse")} className="btn">
               browse listings
             </button>
           </>

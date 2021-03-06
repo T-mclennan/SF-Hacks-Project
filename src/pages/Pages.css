@@ -3,9 +3,23 @@
 .post-page,
 .create-page,
 .contact-page {
-  background: var(--clr-grey-8);
+  /* background: var(--clr-grey-8); */
+
   min-height: calc(100vh - 5rem - 6rem);
 }
+
+/* .glass-wrapper {
+  min-height: calc(100vh - 5rem - 6rem);
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: grid;
+  place-items: center;
+  padding: 5rem 0;
+} */
 
 /* Contact Page */
 
@@ -16,10 +30,16 @@
 }
 
 .contact-form {
-  background: var(--clr-white);
-  border-radius: var(--radius);
+  /* background: var(--clr-white); */
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  /* border-radius: var(--radius); */
   text-align: center;
-  box-shadow: var(--light-shadow);
+  /* box-shadow: var(--light-shadow); */
   transition: var(--transition);
   width: 90vw;
   max-width: 35rem;

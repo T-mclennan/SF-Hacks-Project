@@ -120,13 +120,111 @@
 
 .details {
   margin-top: -5rem;
-  padding-top: 5rem;
-  height: 100vh;
+  padding-top: 10rem;
+  height: 90vh;
   background: var(--clr-primary-30);
   position: relative;
 }
 
-/**** Custom Wave Shape ****/
+.service {
+  background: var(--clr-white);
+  padding: 3rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: var(--radius);
+  text-align: center;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+.details-icon {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.service .underline {
+  width: 3rem;
+  height: 0.12rem;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+.service p {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+.service:hover {
+  background: var(--clr-primary-5);
+  color: var(--clr-primary-9);
+}
+.service:hover p {
+  color: var(--clr-primary-9);
+}
+.service:hover .underline {
+  background: var(--clr-primary-9);
+}
+@media screen and (min-width: 676px) {
+  .services-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -webkit-column-gap: 2rem;
+    -moz-column-gap: 2rem;
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .services-center {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/**** ACTIONS *****/
+
+.action {
+  background-image: repeating-linear-gradient(
+      135deg,
+      hsla(64, 83%, 54%, 0.05) 0px,
+      hsla(64, 83%, 54%, 0.05) 1px,
+      transparent 1px,
+      transparent 11px,
+      hsla(64, 83%, 54%, 0.05) 11px,
+      hsla(64, 83%, 54%, 0.05) 12px,
+      transparent 12px,
+      transparent 32px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      hsla(64, 83%, 54%, 0.05) 0px,
+      hsla(64, 83%, 54%, 0.05) 1px,
+      transparent 1px,
+      transparent 11px,
+      hsla(64, 83%, 54%, 0.05) 11px,
+      hsla(64, 83%, 54%, 0.05) 12px,
+      transparent 12px,
+      transparent 32px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      hsla(64, 83%, 54%, 0.05) 0px,
+      hsla(64, 83%, 54%, 0.05) 1px,
+      transparent 1px,
+      transparent 11px,
+      hsla(64, 83%, 54%, 0.05) 11px,
+      hsla(64, 83%, 54%, 0.05) 12px,
+      transparent 12px,
+      transparent 32px
+    ),
+    repeating-linear-gradient(
+      225deg,
+      hsla(64, 83%, 54%, 0.05) 0px,
+      hsla(64, 83%, 54%, 0.05) 1px,
+      transparent 1px,
+      transparent 11px,
+      hsla(64, 83%, 54%, 0.05) 11px,
+      hsla(64, 83%, 54%, 0.05) 12px,
+      transparent 12px,
+      transparent 32px
+    ),
+    linear-gradient(180deg, rgb(41, 27, 158), rgb(144, 215, 255));
+}
+
+/**** Custom Wave Shape Hero ****/
 .custom-shape-divider-bottom-1615009014 {
   position: absolute;
   bottom: 0;
@@ -160,5 +258,44 @@
   .custom-shape-divider-bottom-1615009014 svg {
     width: calc(141% + 1.3px);
     height: 63px;
+  }
+}
+
+/**** Custom Wave Shape Action ****/
+.custom-shape-divider-top-1615070323 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1615070323 svg {
+  position: relative;
+  display: block;
+  width: calc(180% + 1.3px);
+  height: 98px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1615070323 .shape-fill {
+  fill: #ffffff;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-top-1615070323 svg {
+    width: calc(121% + 1.3px);
+    height: 47px;
+  }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-top-1615070323 svg {
+    width: calc(105% + 1.3px);
+    height: 22px;
   }
 }
