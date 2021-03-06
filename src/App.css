@@ -23,6 +23,7 @@
   --clr-grey-10: hsl(210, 36%, 96%);
   --clr-green-dark: hsl(125, 67%, 35%);
   --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-blue-dark: rgb(37, 77, 187);
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-white: #fff;
   --ff-primary: 'Roboto', sans-serif;
