@@ -1,8 +1,12 @@
 import React from 'react';
 import HeaderImage from '../../assets/hero-img.svg';
+import TextLoop from "react-text-loop";
+import {TextLoopValues} from '../../constants/config';
 import './Landing.css';
 
 function Hero() {
+
+  console.log(TextLoopValues)
   return (
     <section className="hero">
       
@@ -11,7 +15,12 @@ function Hero() {
           <>
             <div className="underline"></div>
             <h1>Discover New Collaborations</h1>
-            <h4>Bulletin board for CS students</h4>
+            <h4>Bulletin board for {" "}
+            <TextLoop 
+              children={TextLoopValues} 
+              interval={5500}
+            />
+            </h4>
             <button to="/contact" className="btn">
               browse listings
             </button>
