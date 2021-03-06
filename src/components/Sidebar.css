@@ -9,14 +9,14 @@
   display: grid;
   place-items: center;
   opacity: 0;
-  background: rgba(255, 255, 255, 0.35);
+  transition: var(--transition);
+  transform: translateX(-100%);
+  background: rgba(255, 255, 255, 0.6);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(7.5px);
   -webkit-backdrop-filter: blur(7.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  transition: var(--transition);
-  transform: translateX(-100%);
 }
 .show-sidebar {
   opacity: 1;
@@ -29,7 +29,7 @@
   display: block;
   text-align: center;
   text-transform: capitalize;
-  color: var(--clr-grey-5);
+  color: var(--clr-primary-2);
   letter-spacing: var(--spacing);
   margin-bottom: 0.5rem;
   font-size: 2rem;
@@ -47,7 +47,7 @@
   font-size: 2.5rem;
   background: transparent;
   border-color: transparent;
-  color: var(--clr-blue-dark);
+  color: var(--clr-primary-2);
   cursor: pointer;
 }
 @media screen and (min-width: 992px) {
