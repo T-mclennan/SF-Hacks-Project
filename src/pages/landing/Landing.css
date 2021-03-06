@@ -118,7 +118,7 @@
 
 /* DETAILS */
 
-.details {
+.details-section {
   margin-top: -5rem;
   padding-top: 10rem;
   height: 90vh;
@@ -126,7 +126,7 @@
   position: relative;
 }
 
-.service {
+.details {
   background: var(--clr-white);
   padding: 3rem 1.5rem;
   margin-bottom: 2rem;
@@ -139,28 +139,28 @@
   font-size: 2rem;
   margin-bottom: 1.5rem;
 }
-.service .underline {
+.details .underline {
   width: 3rem;
   height: 0.12rem;
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
-.service p {
+.details p {
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
-.service:hover {
-  background: var(--clr-primary-5);
+.details:hover {
+  background: var(--clr-primary-3);
   color: var(--clr-primary-9);
 }
-.service:hover p {
+.details:hover p {
   color: var(--clr-primary-9);
 }
-.service:hover .underline {
+.details:hover .underline {
   background: var(--clr-primary-9);
 }
 @media screen and (min-width: 676px) {
-  .services-center {
+  .details-center {
     display: grid;
     grid-template-columns: 1fr 1fr;
     -webkit-column-gap: 2rem;
@@ -169,7 +169,7 @@
   }
 }
 @media screen and (min-width: 992px) {
-  .services-center {
+  .details-center {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }

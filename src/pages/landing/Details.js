@@ -6,12 +6,12 @@ import './Landing.css';
 const Details = () => {
   return (
     <section className="section">
-      <div className="details">
+      <div className="details-section">
       <Title title="Connect With Peers"/>
-      <div className="section-center services-center">
+      <div className="section-center details-center">
         {details.map((service) => {
           const {id, icon, title, text} = service;
-          return <article key={id} className="service">
+          return <article key={id} className="details">
             {icon}
             <h4>{title}</h4>
             <div className="underline"></div>
