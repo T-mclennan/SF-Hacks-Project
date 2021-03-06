@@ -20,7 +20,7 @@
   --clr-grey-4: hsl(209, 28%, 39%);
   /* grey used for paragraphs */
   --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-8: hsla(211, 100%, 81%, 0.379);
   --clr-grey-9: rgb(218, 226, 236);
   --clr-grey-10: hsl(210, 36%, 96%);
   --clr-green-dark: hsl(125, 67%, 35%);
@@ -60,7 +60,9 @@ body {
   line-height: 1.5;
   font-size: 0.875rem;
   margin-top: 5rem;
+  overscroll-behavior-y: none;
 }
+
 ul {
   list-style-type: none;
 }
@@ -85,10 +87,10 @@ h2 {
   font-size: 2rem;
 }
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.45rem;
 }
 h4 {
-  font-size: 0.875rem;
+  font-size: 0.975rem;
 }
 p {
   margin-bottom: 1.25rem;

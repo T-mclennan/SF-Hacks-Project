@@ -2,9 +2,9 @@ import React from 'react'
 
 function BrowserPage() {
   return (
-    <div>
+    <section className="browse-page">
       
-    </div>
+    </section>
   )
 }
 

@@ -3,7 +3,7 @@
 .post-page,
 .create-page,
 .contact-page {
-  background: var(--clr-grey-10);
+  background: var(--clr-grey-8);
   min-height: calc(100vh - 5rem - 6rem);
 }
 
@@ -14,6 +14,7 @@
   place-items: center;
   padding: 5rem 0;
 }
+
 .contact-form {
   background: var(--clr-white);
   border-radius: var(--radius);
