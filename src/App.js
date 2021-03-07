@@ -7,7 +7,7 @@ import CreatePage from './pages/create/CreatePage';
 import ContactPage from './pages/contact/ContactPage';
 import Landing from './pages/landing/Landing';
 import Post from './pages/post/Post';
-import firebase from './firebase/index'
+// import firebase from './firebase/index'
 import './App.css';
 
 function App() {

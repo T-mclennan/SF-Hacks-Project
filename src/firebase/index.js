@@ -14,10 +14,10 @@ firebase.initializeApp({
   measurementId: "G-WKQ0BG5M8B"
 })
 
-var auth = firebase.auth()
-var firestore = firebase.firestore()
+export const auth = firebase.auth()
+export const firestore = firebase.firestore();
 
 
-export default {
-  firebase, firestore, auth
-}
+// export default {
+//   firebase, firestore, auth
+// }

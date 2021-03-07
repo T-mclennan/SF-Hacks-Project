@@ -1,22 +1,42 @@
 import React, {useState} from 'react';
 import {Formik, Form} from 'formik';
 import { v4 as uuidv4 } from 'uuid';
-import {Button,LinearProgress,} from '@material-ui/core';
+import {Button,ExpansionPanelDetails,LinearProgress,} from '@material-ui/core';
 import CustomInput from './CustomInput'
 import CustomSelect from './CustomSelect'
 import Box from '@material-ui/core/Box';
+import axios from 'axios';
 import {categories, subCategories} from '../../constants/selectOptions'
 import { useHistory } from "react-router-dom";
 import 'firebase/firestore';
-import firebase from '../../firebase/index'
+import {firestore} from '../../firebase/index'
 
 
 const PostForm = ({updating, pastValues}) => {
 
 
-  const postsRef = firebase.firestore.collection('posts');
+  const postsRef = firestore.collection('test');
   const history = useHistory();
   const size = window.innerWidth >= 500 ? 'normal' : 'small';
+
+  const sendEmailLink = ({edit, del, email}) => {
+    axios({
+      method: "POST",
+      url: "https://events-api.notivize.com/applications/b0fd8df6-c074-45c7-8e50-7b600354ebfb/event_flows/456cc8dc-5e19-4bf0-a179-9120fd795c0f/events",
+      data: {
+              'email': email,
+              'Link1': edit,
+              'Link2': del
+            }
+      })
+      .then(response => {
+        console.log(response)
+    
+      })
+      .catch(error => {
+        console.log(error)
+      });
+    }
 
   return (<Formik
     initialValues={pastValues || {
@@ -59,9 +79,10 @@ const PostForm = ({updating, pastValues}) => {
 
     onSubmit={ async ({title, email, description, content, category, subCategory, phone, tags,links,}, {setSubmitting}) => {
       const id = uuidv4();
+      const veri = uuidv4()
       const alternateValues = {
         postID: id,
-        veriToken: uuidv4(),
+        veriToken: veri,
         postTitle: title,
         category,
         tags: tags ? tags.split(' ') : [],
@@ -75,6 +96,11 @@ const PostForm = ({updating, pastValues}) => {
       }
 
       await postsRef.add(alternateValues);
+      await sendEmailLink(
+        email,
+        `https:\colab-sfhacks-firebase.web.app\edit?${veri}`,
+       `https:\colab-sfhacks-firebase.web.app\delete?${veri}`
+      );
       setSubmitting(false);
       history.push(`/post?id=${id}`)
     }}
