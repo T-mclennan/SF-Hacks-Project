@@ -7,7 +7,9 @@ import CreatePage from './pages/create/CreatePage';
 import ContactPage from './pages/contact/ContactPage';
 import Landing from './pages/landing/Landing';
 import Post from './pages/post/Post';
-// import firebase from './firebase/index'
+import Edit from './pages/edit/Edit';
+import Delete from './pages/delete/Delete';
+
 import './App.css';
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
           <Route exact path='/create' component={CreatePage} />
           <Route exact path='/contact' component={ContactPage} />
           <Route path='/post' component={Post} />
+          <Route path='/edit' component={Edit} />
+          <Route path='/delete' component={Delete} />
           <Route path='/'>
             <Landing />
           </Route>

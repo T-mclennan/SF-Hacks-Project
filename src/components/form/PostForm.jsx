@@ -14,7 +14,7 @@ import {firestore} from '../../firebase/index'
 
 const PostForm = ({updating, pastValues}) => {
 
-
+  
   const postsRef = firestore.collection('test');
   const history = useHistory();
   const size = window.innerWidth >= 500 ? 'normal' : 'small';
@@ -37,6 +37,38 @@ const PostForm = ({updating, pastValues}) => {
         console.log(error)
       });
     }
+
+    const submitForm = async ({title, email, description, content, category, subCategory, phone, tags,links,}, {setSubmitting}) => {
+      const id = uuidv4();
+      const veri = uuidv4()
+      const alternateValues = {
+        postID: id,
+        veriToken: veri,
+        postTitle: title,
+        category,
+        tags: tags ? tags.split(' ') : [],
+        shortDesc: description,
+        longDesc: content,
+        externalLinks: links ? links.replace(/\r/g, "").split(/\n/) : [],
+        cellNumber: phone,
+        email, 
+        subCategory,
+        date: new Date().toDateString().slice(4,15)
+      }
+
+      await postsRef.add(alternateValues);
+      if (!updating) {
+        await sendEmailLink(email,
+        `https:\colab-sfhacks-firebase.web.app\edit?${veri}`,
+        `https:\colab-sfhacks-firebase.web.app\delete?${veri}`
+      )}
+      setSubmitting(false);
+      history.push(`/post?id=${id}`)
+    }
+
+  const updateForm = () => {
+    console.log('updating!!!!')
+  }
 
   return (<Formik
     initialValues={pastValues || {
@@ -76,34 +108,7 @@ const PostForm = ({updating, pastValues}) => {
 
       return errors;
     }}
-
-    onSubmit={ async ({title, email, description, content, category, subCategory, phone, tags,links,}, {setSubmitting}) => {
-      const id = uuidv4();
-      const veri = uuidv4()
-      const alternateValues = {
-        postID: id,
-        veriToken: veri,
-        postTitle: title,
-        category,
-        tags: tags ? tags.split(' ') : [],
-        shortDesc: description,
-        longDesc: content,
-        externalLinks: links ? links.replace(/\r/g, "").split(/\n/) : [],
-        cellNumber: phone,
-        email, 
-        subCategory,
-        date: new Date().toDateString().slice(4,15)
-      }
-
-      await postsRef.add(alternateValues);
-      await sendEmailLink(
-        email,
-        `https:\colab-sfhacks-firebase.web.app\edit?${veri}`,
-       `https:\colab-sfhacks-firebase.web.app\delete?${veri}`
-      );
-      setSubmitting(false);
-      history.push(`/post?id=${id}`)
-    }}
+    onSubmit={submitForm}
   >
     {({submitForm, isSubmitting, values, touched, errors}) => (
 

@@ -150,14 +150,14 @@
   transition: var(--transition);
 }
 .details:hover {
-  background: var(--clr-primary-3);
-  color: var(--clr-primary-9);
+  background: rgb(77, 77, 211);
+  color: var(--clr-primary-10);
 }
 .details:hover p {
-  color: var(--clr-primary-9);
+  color: var(--clr-primary-10);
 }
 .details:hover .underline {
-  background: var(--clr-primary-9);
+  background: var(--clr-primary-10);
 }
 @media screen and (min-width: 676px) {
   .details-center {

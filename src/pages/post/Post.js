@@ -1,7 +1,6 @@
 import React, {useLayoutEffect, useState} from 'react'
 import { Link, useLocation} from "react-router-dom";
 import ReactMarkdown from "react-markdown"
-// import {mockData} from '../../constants/mock'
 import {firestore} from '../../firebase/index'
 import 'firebase/firestore';
 

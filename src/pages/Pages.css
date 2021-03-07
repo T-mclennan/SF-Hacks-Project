@@ -199,3 +199,28 @@
     height: 17.5rem;
   }
 }
+
+/**** BROWSE *****/
+.browse-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+}
+
+.browse-navbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  background-color: thistle;
+}
+
+.browse-content-container {
+  padding-top: 3rem;
+  /* height: 60vh;
+  overflow-y: scroll; */
+}
