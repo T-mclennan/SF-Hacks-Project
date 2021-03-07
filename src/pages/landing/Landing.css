@@ -121,7 +121,7 @@
 .details-section {
   margin-top: -5rem;
   padding-top: 10rem;
-  height: 90vh;
+  /* height: 90vh; */
   background: var(--clr-primary-30);
   position: relative;
 }
