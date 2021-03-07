@@ -1,30 +1,24 @@
 import React, {useState} from 'react';
 import {Formik, Form} from 'formik';
-import axios from 'axios'
-import {
-  Button,
-  LinearProgress,
-} from '@material-ui/core';
+import { v4 as uuidv4 } from 'uuid';
+import {Button,LinearProgress,} from '@material-ui/core';
 import CustomInput from './CustomInput'
 import CustomSelect from './CustomSelect'
 import Box from '@material-ui/core/Box';
-import FormResult from './FormResult';
 import {categories, subCategories} from '../../constants/selectOptions'
+import { useHistory } from "react-router-dom";
+import 'firebase/firestore';
+import firebase from '../../firebase/index'
 
 
 const PostForm = ({updating, pastValues}) => {
 
 
-  const [serverState, setServerState] = useState(undefined);
-  const handleServerResponse = (ok, msg) => {
-    setServerState({ok, msg});
-  };
+  const postsRef = firebase.firestore.collection('posts');
+  const history = useHistory();
+  const size = window.innerWidth >= 500 ? 'normal' : 'small';
 
-  const size = window.innerWidth >= 500 ? 'normal' : 'small'
-
-  return (serverState ? 
-    <FormResult status={serverState.ok} msg={serverState.msg}/>
-    : <Formik
+  return (<Formik
     initialValues={pastValues || {
       title: '',
       email: '',
@@ -33,6 +27,9 @@ const PostForm = ({updating, pastValues}) => {
       content: '',
       category: '',
       subCategory: '',
+      phone: '',
+      tags: '',
+      links: '',
     }}
 
     validate={(values) => {
@@ -59,21 +56,27 @@ const PostForm = ({updating, pastValues}) => {
 
       return errors;
     }}
-    onSubmit={(values) => {
-      console.log(values)
-      // axios({
-      //   method: "POST",
-      //   url: "https://formspree.io/f/mbjpzkgb",
-      //   data: values
-      // })
-      //   .then(response => {
-      //     setSubmitting(false);
-      //     handleServerResponse(true, "Thank you for the feedback.");
-      //   })
-      //   .catch(error => {
-      //     setSubmitting(false);
-      //     handleServerResponse(false, error.response.data.error);
-      //   });
+
+    onSubmit={ async ({title, email, description, content, category, subCategory, phone, tags,links,}, {setSubmitting}) => {
+      const id = uuidv4();
+      const alternateValues = {
+        postID: id,
+        veriToken: uuidv4(),
+        postTitle: title,
+        category,
+        tags: tags ? tags.split(' ') : [],
+        shortDesc: description,
+        longDesc: content,
+        externalLinks: links ? links.replace(/\r/g, "").split(/\n/) : [],
+        cellNumber: phone,
+        email, 
+        subCategory,
+        date: new Date().toDateString().slice(4,15)
+      }
+
+      await postsRef.add(alternateValues);
+      setSubmitting(false);
+      history.push(`/post?id=${id}`)
     }}
   >
     {({submitForm, isSubmitting, values, touched, errors}) => (
@@ -108,8 +111,6 @@ const PostForm = ({updating, pastValues}) => {
             </Box> 
           }
 
-
-
           <Box margin={2}>
             <CustomInput type="text" name="title" label="Title"/>
           </Box>
@@ -136,7 +137,7 @@ const PostForm = ({updating, pastValues}) => {
           </Box>
 
           <Box margin={2}>
-            <CustomInput type="text" name="phone number" label="Phone Number (optional)"/>
+            <CustomInput type="text" name="phone" label="Phone Number (optional)"/>
           </Box>
 
           {isSubmitting && <LinearProgress />}
