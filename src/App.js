@@ -6,6 +6,7 @@ import BrowsePage from './pages/browse/BrowsePage';
 import CreatePage from './pages/create/CreatePage';
 import ContactPage from './pages/contact/ContactPage';
 import Landing from './pages/landing/Landing';
+import Post from './pages/post/Post';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route exact path='/browse' component={BrowsePage} />
           <Route exact path='/create' component={CreatePage} />
           <Route exact path='/contact' component={ContactPage} />
+          <Route path='/post' component={Post} />
           <Route path='/'>
             <Landing />
           </Route>

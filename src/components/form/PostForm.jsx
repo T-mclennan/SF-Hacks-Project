@@ -12,7 +12,7 @@ import FormResult from './FormResult';
 import {categories, subCategories} from '../../constants/selectOptions'
 
 
-const PostForm = ({updating = false}) => {
+const PostForm = ({updating, pastValues}) => {
 
 
   const [serverState, setServerState] = useState(undefined);
@@ -25,7 +25,7 @@ const PostForm = ({updating = false}) => {
   return (serverState ? 
     <FormResult status={serverState.ok} msg={serverState.msg}/>
     : <Formik
-    initialValues={{
+    initialValues={pastValues || {
       title: '',
       email: '',
       description: '',
