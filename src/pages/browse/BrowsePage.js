@@ -28,7 +28,6 @@ function BrowserPage() {
       </div>
 
       <div className="browse-content-container">
-
         {postList.map((post, i) => {
           return <PostSample key={i} {...post} />
         })}

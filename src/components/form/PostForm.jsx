@@ -15,7 +15,7 @@ import {firestore} from '../../firebase/index'
 const PostForm = ({updating, pastValues}) => {
 
   
-  const postsRef = firestore.collection('test');
+  const postsRef = firestore.collection('posts');
   const history = useHistory();
   const size = window.innerWidth >= 500 ? 'normal' : 'small';
 

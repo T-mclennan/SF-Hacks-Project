@@ -19,9 +19,7 @@ const PostSample = ({postTitle, tags, shortDesc, image, date, category, postID})
   return (
     <Link to={`/post?id=${postID}`} className="blog" key={postID}>
       <article>
-        {/* {image &&
-          <Image fluid={image.childImageSharp.fluid} className="blog-img" objectPosition="0% 0%" />
-        } */}
+ 
         <div className="blog-card">
           <div className="blog-header-container">
 
