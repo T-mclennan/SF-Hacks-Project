@@ -2,7 +2,7 @@
 
 Designed, coded and deployed over the course of 1-2 days, I ran out of time before I could finish the UI though! 
 
-deployment at: https://colab-sfhacks-firebase.firebaseapp.com/
+<img width="1280" alt="Screen Shot 2021-03-07 at 11 15 16 PM" src="https://user-images.githubusercontent.com/43154475/110576420-9a6c0980-8115-11eb-931b-9992684a8a58.png">
 
 
 ___________________________________________________________
