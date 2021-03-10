@@ -1,4 +1,4 @@
-Hackathon project from the weekend 3/5/2021-3/7/2021:
+## CoLabs: Hackathon project from the weekend 3/5/2021-3/7/2021:
 
 Designed, coded and deployed over the course of 1-2 days, I ran out of time before I could finish the UI though! 
 
