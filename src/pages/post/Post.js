@@ -42,18 +42,20 @@ const Post = () => {
             <h2>{data.postTitle || 'default title'}</h2>
             <p style={{margin: '0.5rem'}}>{data.shortDesc}</p>
             <span><a href={data.email} style={{textAlign: 'center'}}>{data.email} - {data.date}</a></span>
-            {data.externalLinks && data.externalLinks.map((link, i) => {
+            {data.links && data.links.replace(/\r/g, "").split(/\n/).map((link, i) => {
               return <a href={link} key={i}>{link}</a>
             })}
             <div className="underline"></div>
         </div>
 
         <article className="post-content">
-          <ReactMarkdown source={data.longDesc} escapeHtml={false}/>
+          <div style={{width: '80%'}}>
+            <ReactMarkdown source={data.longDesc} escapeHtml={false}/>
+          </div>
         </article>
 
         <div className="post-tags">
-          {data.tags && data.tags.map((tag, i) => {
+          {data.tags && data.tags.split(' ').map((tag, i) => {
             return <span key={i}>{tag}</span>
           })}
         </div>

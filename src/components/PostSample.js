@@ -13,9 +13,7 @@ const colors = {
 
 }
 
-
-
-const PostSample = ({postTitle, tags, shortDesc, image, date, category, postID}) => {
+const PostSample = ({title, tags, description, image, date, category, postID}) => {
   return (
     <Link to={`/post?id=${postID}`} className="blog" key={postID}>
       <article>
@@ -24,11 +22,11 @@ const PostSample = ({postTitle, tags, shortDesc, image, date, category, postID})
           <div className="blog-header-container">
 
           </div>
-          <h2 style={{color: 'hsl(204, 77%, 34%)'}}>{postTitle || 'default title'}</h2>
-          <h4>{shortDesc}</h4>
+          <h2 style={{color: 'hsl(204, 77%, 34%)'}}>{title || 'default title'}</h2>
+          <h4>{description}</h4>
           <div className="blog-footer">
           <div className="post-tags">
-            {tags && tags.map((tag, i) => {
+            {tags && tags.split(' ').map((tag, i) => {
               return <span key={i}>{tag}</span>
             })}
         </div>

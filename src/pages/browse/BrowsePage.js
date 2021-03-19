@@ -8,7 +8,7 @@ function BrowserPage() {
 
   const [postList, setPostList] = useState([])
 
-  const postsRef = firestore.collection('posts');
+  const postsRef = firestore.collection('post_content');
 
   const fetchPosts = async () => {
     const data=await postsRef.get();

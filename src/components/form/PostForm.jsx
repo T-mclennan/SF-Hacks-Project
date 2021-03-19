@@ -19,56 +19,58 @@ const PostForm = ({updating, pastValues}) => {
   const history = useHistory();
   const size = window.innerWidth >= 500 ? 'normal' : 'small';
 
-  const sendEmailLink = ({edit, del, email}) => {
-    axios({
-      method: "POST",
-      url: "https://events-api.notivize.com/applications/b0fd8df6-c074-45c7-8e50-7b600354ebfb/event_flows/456cc8dc-5e19-4bf0-a179-9120fd795c0f/events",
-      data: {
-              'email': email,
-              'Link1': edit,
-              'Link2': del
-            }
-      })
-      .then(response => {
-        console.log(response)
+  // const sendEmailLink = ({edit, del, email}) => {
+  //   axios({
+  //     method: "POST",
+  //     url: "https://events-api.notivize.com/applications/b0fd8df6-c074-45c7-8e50-7b600354ebfb/event_flows/456cc8dc-5e19-4bf0-a179-9120fd795c0f/events",
+  //     data: {
+  //             'email': email,
+  //             'Link1': edit,
+  //             'Link2': del
+  //           }
+  //     })
+  //     .then(response => {
+  //       console.log(response)
     
-      })
-      .catch(error => {
-        console.log(error)
-      });
-    }
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     });
+  //   }
 
-    const submitForm = async ({title, email, description, content, category, subCategory, phone, tags,links,}, {setSubmitting}) => {
+    // const submitForm = async ({title, email, description, content, category, subCategory, phone, tags,links,}, {setSubmitting}) => {
+    const submitForm = async (values, {setSubmitting}) => {
+      console.log(values)
       const id = uuidv4();
       const veri = uuidv4()
-      const alternateValues = {
-        postID: id,
-        veriToken: veri,
-        postTitle: title,
-        category,
-        tags: tags ? tags.split(' ') : [],
-        shortDesc: description,
-        longDesc: content,
-        externalLinks: links ? links.replace(/\r/g, "").split(/\n/) : [],
-        cellNumber: phone,
-        email, 
-        subCategory,
-        date: new Date().toDateString().slice(4,15)
-      }
+      // const alternateValues = {
+      //   postID: id,
+      //   veriToken: veri,
+      //   postTitle: title,
+      //   category,
+      //   tags: tags ? tags.split(' ') : [],
+      //   shortDesc: description,
+      //   longDesc: content,
+      //   externalLinks: links ? links.replace(/\r/g, "").split(/\n/) : [],
+      //   cellNumber: phone,
+      //   email, 
+      //   subCategory,
+      //   date: new Date().toDateString().slice(4,15)
+      // }
 
-      await postsRef.add(alternateValues);
-      if (!updating) {
-        await sendEmailLink(email,
-        `https:\colab-sfhacks-firebase.web.app\edit?${veri}`,
-        `https:\colab-sfhacks-firebase.web.app\delete?${veri}`
-      )}
+      await postsRef.add({...values, postID: id, veriToken: veri});
+      // if (!updating) {
+      //   await sendEmailLink(email,
+      //   `https:\colab-sfhacks-firebase.web.app\edit?${veri}`,
+      //   `https:\colab-sfhacks-firebase.web.app\delete?${veri}`
+      // )}
       setSubmitting(false);
       history.push(`/post?id=${id}`)
     }
 
-  const updateForm = () => {
-    console.log('updating!!!!')
-  }
+  // const updateForm = () => {
+  //   console.log('updating!!!!')
+  // }
 
   return (<Formik
     initialValues={pastValues || {
@@ -173,14 +175,15 @@ const PostForm = ({updating, pastValues}) => {
 
           {isSubmitting && <LinearProgress />}
           <Box margin={2}>
-            <Button
+            {/* <Button
               variant="contained"
               color="primary"
               disabled={isSubmitting}
               onClick={submitForm}
             >
               Submit
-            </Button>
+            </Button> */}
+            <button onClick={submitForm} disabled={isSubmitting} className="submit-btn btn">Submit Post</button>
           </Box>
         </Form>
     )}
