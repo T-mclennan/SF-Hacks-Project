@@ -3,7 +3,8 @@
 .post-page,
 .create-page,
 .contact-page {
-  background: var(--clr-grey-5);
+  /* background: var(--clr-grey-5); */
+  background: rgb(206, 212, 240);
   display: grid;
   place-items: center;
   padding: 5rem 0;

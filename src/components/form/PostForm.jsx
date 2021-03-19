@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Formik, Form} from 'formik';
 import { v4 as uuidv4 } from 'uuid';
-import {Button,ExpansionPanelDetails,LinearProgress,} from '@material-ui/core';
+import {Button, LinearProgress,} from '@material-ui/core';
 import CustomInput from './CustomInput'
 import CustomSelect from './CustomSelect'
 import Box from '@material-ui/core/Box';
@@ -15,7 +15,7 @@ import {firestore} from '../../firebase/index'
 const PostForm = ({updating, pastValues}) => {
 
   
-  const postsRef = firestore.collection('posts');
+  const postsRef = firestore.collection('post_content');
   const history = useHistory();
   const size = window.innerWidth >= 500 ? 'normal' : 'small';
 

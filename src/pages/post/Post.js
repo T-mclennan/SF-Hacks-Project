@@ -18,7 +18,7 @@ const Post = () => {
   const paramID = paramQuery.get("id")
 
   //Create firestore query for that ID
-  const postsRef = firestore.collection('posts');
+  const postsRef = firestore.collection('post_content');
 
   const fetchPosts = async () => {
 

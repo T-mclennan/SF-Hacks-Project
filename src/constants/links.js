@@ -24,18 +24,25 @@ const data = [
   },
 ]
 
-const tempLinks = data.map(link => {
-  return (
-    <li key={link.id}>
-      <Link to={link.url}>{link.text}</Link>
-    </li>
-  )
-})
+// const tempLinks = data.map(link => {
+//   return (
+//     <li key={link.id}>
+//       <Link to={link.url}>{link.text}</Link>
+//     </li>
+//   )
+// })
 
-export default ({ styleClass }) => {
+export default ({ styleClass, toggle }) => {
   return (
     <ul className={`page-links ${styleClass ? styleClass : ""}`}>
-      {tempLinks}
+      {/* {tempLinks} */}
+      {data.map(link => {
+        return (
+          <li key={link.id}>
+            <Link to={link.url} onClick={() => toggle()}>{link.text}</Link>
+          </li>
+        )
+      })}
     </ul>
   )
 }
