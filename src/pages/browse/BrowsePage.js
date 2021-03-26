@@ -4,7 +4,7 @@ import 'firebase/firestore';
 import PostSample from '../../components/PostSample'
 import '../Pages.css'
 
-function BrowserPage() {
+function BrowsePage() {
 
   const [postList, setPostList] = useState([])
 
@@ -36,4 +36,4 @@ function BrowserPage() {
   )
 }
 
-export default BrowserPage
+export default BrowsePage

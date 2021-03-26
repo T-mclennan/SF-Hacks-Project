@@ -32,7 +32,7 @@ const data = [
 //   )
 // })
 
-export default ({ styleClass, toggle }) => {
+const sideLink = ({ styleClass, toggle }) => {
   return (
     <ul className={`page-links ${styleClass ? styleClass : ""}`}>
       {/* {tempLinks} */}
@@ -46,3 +46,5 @@ export default ({ styleClass, toggle }) => {
     </ul>
   )
 }
+
+export default sideLink;

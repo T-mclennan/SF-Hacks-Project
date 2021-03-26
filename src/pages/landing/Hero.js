@@ -14,7 +14,7 @@ function Hero() {
       
       <div className="section-center hero-center">
         <article className="hero-info">
-          <>
+          {/* <> */}
             <div className="underline"></div>
             <h1>Discover New Collaborations</h1>
             <h4>Bulletin board for {" "}
@@ -26,7 +26,7 @@ function Hero() {
             <button onClick={() => history.push("/browse")} className="btn">
               browse listings
             </button>
-          </>
+          {/* </> */}
         </article>
         <img src={HeaderImage} className="hero-img" alt="header-image"/>
       </div>

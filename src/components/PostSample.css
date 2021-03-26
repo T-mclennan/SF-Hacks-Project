@@ -20,6 +20,7 @@
 .blog-card {
   display: grid;
   grid-template-rows: auto 1fr auto;
+  margin: 1rem 1.75rem;
 }
 .blog-img {
   border-top-left-radius: var(--radius);
@@ -27,9 +28,7 @@
   /* height: 15rem; */
   height: 17.5rem;
 }
-.blog-card {
-  padding: 4rem 6rem;
-}
+
 .blog-card a,
 h4 {
   color: var(--clr-grey-1);
@@ -65,6 +64,9 @@ h4 {
   .blog-section-center {
     width: 95vw;
   }
+  .blog-card {
+    padding: 4rem 6rem;
+  }
 }
 
 @media screen and (min-width: 576px) {
@@ -73,6 +75,11 @@ h4 {
     grid-template-columns: repeat(auto-fill, minmax(368px, 1fr));
     column-gap: 2rem;
   }
+
+  .blog-card {
+    padding: 2rem 3rem;
+  }
+
   .blog-img {
     height: 17.5rem;
   }

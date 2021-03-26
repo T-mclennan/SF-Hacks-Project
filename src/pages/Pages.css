@@ -221,7 +221,9 @@
 }
 
 .browse-content-container {
-  padding-top: 3rem;
+  padding-top: 2rem;
   /* height: 60vh;
   overflow-y: scroll; */
+  max-width: 50rem;
+  width: 100%;
 }
