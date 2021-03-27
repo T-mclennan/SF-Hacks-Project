@@ -32,14 +32,17 @@ const data = [
 //   )
 // })
 
-const sideLink = ({ styleClass, toggle }) => {
+const links = ({ styleClass, toggle }) => {
   return (
     <ul className={`page-links ${styleClass ? styleClass : ""}`}>
       {/* {tempLinks} */}
       {data.map(link => {
         return (
           <li key={link.id}>
-            <Link to={link.url} onClick={() => toggle()}>{link.text}</Link>
+            {toggle ? 
+              <Link to={link.url} onClick={() => toggle()}>{link.text}</Link> :
+              <Link to={link.url} >{link.text}</Link>
+            }
           </li>
         )
       })}
@@ -47,4 +50,4 @@ const sideLink = ({ styleClass, toggle }) => {
   )
 }
 
-export default sideLink;
+export default links;
