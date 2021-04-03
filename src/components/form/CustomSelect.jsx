@@ -5,8 +5,8 @@ import {
   TextField,
 } from 'formik-material-ui';
 import MenuItem from "@material-ui/core/MenuItem";
-const width = window.innerWidth >= 560 ? 250 : '100%';
-const margin = window.innerWidth >= 560 ? 5 : 0;
+const width = '100%';
+const margin = 0;
 const inputSize = window.innerWidth >= 500 ? 'small' : 'medium'
 
 const useStyles = makeStyles({
@@ -63,20 +63,6 @@ const CustomSelect = ({options, ...props}) => {
             </MenuItem>
           ))}
     </Field>
-
-  //   <Field
-  //     component={Select}
-
-  //     {...props}
-  //     variant="outlined"
-  //     fullWidth
-  //     size={inputSize}
-  //   >
-
-  //   <MenuItem value={10}>Ten</MenuItem>
-  //   <MenuItem value={20}>Twenty</MenuItem>
-  //   <MenuItem value={30}>Thirty</MenuItem>
-  // </Field>
   )
 }
 

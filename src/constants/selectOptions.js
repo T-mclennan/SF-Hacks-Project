@@ -1,15 +1,15 @@
 export const categories = [
   {
-    value: 'projects',
-    label: 'Offering project',
+    value: 'people',
+    label: 'Seeking People',
   },
   {
-    value: 'people',
+    value: 'projects',
     label: 'Seeking project',
   },
   {
     value: 'paid',
-    label: 'Paid Gig',
+    label: 'Paid Gigs',
   },
   {
     value: 'mentorship',
@@ -27,7 +27,7 @@ export const categories = [
 
 export const subCategories = {
 
-  projects: [
+  people: [
     {
       value: 'frontend',
       label: 'Seeking Frontend',
@@ -50,7 +50,7 @@ export const subCategories = {
     },
   ],
 
-  people: [
+  projects: [
     {
       value: 'frontend',
       label: 'Frontend Role',

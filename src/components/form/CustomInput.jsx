@@ -1,6 +1,6 @@
 import React from 'react'
 import {Field} from 'formik';
-import {TextField, Select} from 'formik-material-ui';
+import {TextField} from 'formik-material-ui';
 import { makeStyles} from '@material-ui/core/styles';
 const inputSize = window.innerWidth >= 500 ? 'small' : 'medium'
 
@@ -50,7 +50,7 @@ const CustomInput = (props) => {
     
     <Field
       component={TextField}
-
+      // style={{ margin: 8 }}
       {...props}
       variant="outlined"
       fullWidth
@@ -67,10 +67,8 @@ const CustomInput = (props) => {
           focused: classes.cssFocused,
           notchedOutline: classes.notchedOutline,
         },
-        style: {
-
-        }
       }}
+      // margin="normal"
     />
   )
 }
