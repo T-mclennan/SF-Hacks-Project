@@ -8,7 +8,7 @@ function Landing() {
     <div>
       <Hero/>
       <Details />
-      {/* <Action /> */}
+      <Action />
     </div>
   )
 }

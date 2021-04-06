@@ -1,4 +1,4 @@
-/*** HERO COMPONENT ***/
+/****** HERO COMPONENT ******/
 
 .hero {
   position: relative;
@@ -116,7 +116,7 @@
   }
 }
 
-/* DETAILS */
+/****** DETAILS COMPONENT ******/
 
 .details-section {
   margin-top: -5rem;
@@ -175,54 +175,76 @@
   }
 }
 
-/**** ACTIONS *****/
+/**** ACTIONS COMPONENT*****/
 
 .action {
-  background-image: repeating-linear-gradient(
-      135deg,
-      hsla(64, 83%, 54%, 0.05) 0px,
-      hsla(64, 83%, 54%, 0.05) 1px,
-      transparent 1px,
-      transparent 11px,
-      hsla(64, 83%, 54%, 0.05) 11px,
-      hsla(64, 83%, 54%, 0.05) 12px,
-      transparent 12px,
-      transparent 32px
-    ),
-    repeating-linear-gradient(
-      180deg,
-      hsla(64, 83%, 54%, 0.05) 0px,
-      hsla(64, 83%, 54%, 0.05) 1px,
-      transparent 1px,
-      transparent 11px,
-      hsla(64, 83%, 54%, 0.05) 11px,
-      hsla(64, 83%, 54%, 0.05) 12px,
-      transparent 12px,
-      transparent 32px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      hsla(64, 83%, 54%, 0.05) 0px,
-      hsla(64, 83%, 54%, 0.05) 1px,
-      transparent 1px,
-      transparent 11px,
-      hsla(64, 83%, 54%, 0.05) 11px,
-      hsla(64, 83%, 54%, 0.05) 12px,
-      transparent 12px,
-      transparent 32px
-    ),
-    repeating-linear-gradient(
-      225deg,
-      hsla(64, 83%, 54%, 0.05) 0px,
-      hsla(64, 83%, 54%, 0.05) 1px,
-      transparent 1px,
-      transparent 11px,
-      hsla(64, 83%, 54%, 0.05) 11px,
-      hsla(64, 83%, 54%, 0.05) 12px,
-      transparent 12px,
-      transparent 32px
-    ),
-    linear-gradient(180deg, rgb(41, 27, 158), rgb(144, 215, 255));
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../../assets/action1.jpg'),
+    radial-gradient(rgba(110, 140, 153, 0.76), rgba(30, 0, 255, 0.9));
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 2rem;
+  background-blend-mode: multiply, screen, overlay;
+}
+
+.action-text {
+  font-family: 'Share Tech Mono', monospace;
+  color: #fff;
+  font-size: 6vh;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.45);
+  text-align: center;
+}
+
+.action-text::before,
+.action-text::after {
+  content: '';
+  display: inline-block;
+  /* position: absolute; */
+  vertical-align: middle;
+  height: 0.09em;
+  min-width: 20vw;
+}
+
+.action-text::before {
+  background: linear-gradient(to right, rgba(240, 240, 240, 0), #fff);
+  margin-right: 4vh;
+}
+
+.action-text::after {
+  background: linear-gradient(to left, rgba(240, 240, 240, 0), #fff);
+  margin-left: 4vh;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .action-text {
+    font-size: 5vh;
+  }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .action-text {
+    font-size: 3vh;
+  }
+
+  .action-text::before,
+  .action-text::after {
+    min-width: 17vw;
+  }
+  .action-text::before {
+    margin-right: 2vh;
+  }
+
+  .action-text::after {
+    margin-left: 2vh;
+  }
 }
 
 /**** Custom Wave Shape Hero ****/
@@ -262,10 +284,47 @@
   }
 }
 
-/**** Custom Wave Shape Action ****/
-.custom-shape-divider-top-1615070323 {
+/**** Custom Wave Shape Action Top ****/
+.custom-shape-divider-top-1617676600 {
   position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1617676600 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 40px;
+}
+
+.custom-shape-divider-top-1617676600 .shape-fill {
+  fill: #ffffff;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-top-1617676600 svg {
+    width: calc(100% + 1.3px);
+    height: 31px;
+  }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-top-1617676600 svg {
+    width: calc(100% + 1.3px);
+    height: 20px;
+  }
+}
+
+/**** Custom Wave Shape Action Bottom ****/
+.custom-shape-divider-bottom-1617677217 {
+  position: absolute;
+  bottom: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
@@ -273,30 +332,30 @@
   transform: rotate(180deg);
 }
 
-.custom-shape-divider-top-1615070323 svg {
+.custom-shape-divider-bottom-1617677217 svg {
   position: relative;
   display: block;
-  width: calc(180% + 1.3px);
-  height: 98px;
+  width: calc(100% + 1.3px);
+  height: 40px;
   transform: rotateY(180deg);
 }
 
-.custom-shape-divider-top-1615070323 .shape-fill {
-  fill: #ffffff;
+.custom-shape-divider-bottom-1617677217 .shape-fill {
+  fill: #222222;
 }
 
 /** For tablet devices **/
 @media (min-width: 768px) and (max-width: 1023px) {
-  .custom-shape-divider-top-1615070323 svg {
-    width: calc(121% + 1.3px);
-    height: 47px;
+  .custom-shape-divider-bottom-1617677217 svg {
+    width: calc(100% + 1.3px);
+    height: 31px;
   }
 }
 
 /** For mobile devices **/
 @media (max-width: 767px) {
-  .custom-shape-divider-top-1615070323 svg {
-    width: calc(105% + 1.3px);
-    height: 22px;
+  .custom-shape-divider-bottom-1617677217 svg {
+    width: calc(100% + 1.3px);
+    height: 20px;
   }
 }

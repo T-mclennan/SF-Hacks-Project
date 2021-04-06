@@ -35,9 +35,9 @@
 .contact-form {
   background: var(--clr-white);
   border-radius: var(--radius);
-  text-align: center;
   box-shadow: var(--light-shadow);
   transition: var(--transition);
+  text-align: center;
   /* width: 90vw; */
   width: 100vw;
   max-width: 40rem;

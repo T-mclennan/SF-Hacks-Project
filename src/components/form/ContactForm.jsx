@@ -18,8 +18,7 @@ const ContactForm = ({updating, pastValues}) => {
       url: "https://formspree.io/f/xknplldl",
       data: values
     })
-      .then(response => {
-        console.log(response)
+      .then(res => {
         actions.setSubmitting(false);
         actions.resetForm();
         handleServerResponse(true, "Message sent. Thanks for reaching out!");
