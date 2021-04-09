@@ -9,27 +9,30 @@ import Landing from './pages/landing/Landing';
 import Post from './pages/post/Post';
 import Edit from './pages/edit/Edit';
 import Delete from './pages/delete/Delete';
-
+// import {auth} from './firebase/index'
+import {AuthProvider} from './contexts/AuthContext'
 import './App.css';
 
 function App() {
 
   return (
     <div className="App-component">
-      <Layout>
-        <Switch>
-          <Route exact path='/about' component={AboutPage} />
-          <Route exact path='/browse' component={BrowsePage} />
-          <Route exact path='/create' component={CreatePage} />
-          <Route exact path='/contact' component={ContactPage} />
-          <Route path='/post' component={Post} />
-          <Route path='/edit' component={Edit} />
-          <Route path='/delete' component={Delete} />
-          <Route path='/'>
-            <Landing />
-          </Route>
-        </Switch>
-      </Layout>
+      <AuthProvider>
+        <Layout>
+          <Switch>
+            <Route exact path='/about' component={AboutPage} />
+            <Route exact path='/browse' component={BrowsePage} />
+            <Route exact path='/create' component={CreatePage} />
+            <Route exact path='/contact' component={ContactPage} />
+            <Route path='/post' component={Post} />
+            <Route path='/edit' component={Edit} />
+            <Route path='/delete' component={Delete} />
+            <Route path='/'>
+              <Landing />
+            </Route>
+          </Switch>
+        </Layout>
+      </AuthProvider>
     </div>
   );
 }

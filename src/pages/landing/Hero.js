@@ -14,17 +14,17 @@ function Hero() {
       
       <div className="section-center hero-center">
         <article className="hero-info">
-          <div className="underline"></div>
-          <h1>Discover New Collaborations</h1>
-          <h4>Bulletin board for {" "}
-          <TextLoop 
-            children={TextLoopValues} 
-            interval={5500}
-          />
-          </h4>
-          <button onClick={() => history.push("/browse")} className="btn">
-            browse listings
-          </button>
+            <div className="underline"></div>
+            <h1>Discover New Collaborations</h1>
+            <h4>Bulletin board for {" "}
+            <TextLoop 
+              children={TextLoopValues} 
+              interval={5500}
+            />
+            </h4>
+            <button onClick={() => history.push("/browse")} className="btn">
+              browse listings
+            </button>
         </article>
         <img src={HeaderImage} className="hero-img" alt="two students collaborating"/>
       </div>

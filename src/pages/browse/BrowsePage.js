@@ -5,7 +5,6 @@ import PostSample from '../../components/PostSample'
 import '../Pages.css'
 
 function BrowsePage() {
-
   const [postList, setPostList] = useState([])
 
   const postsRef = firestore.collection('post_content');
