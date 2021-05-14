@@ -17,14 +17,13 @@ function Edit() {
     const [data, setData] = useState(null)
   
     //Create firestore query for that ID
-    const postsRef = firestore.collection('posts');
+    const postsRef = firestore.collection('post_content');
 
     const fetchPosts = async () => {
       const data=await postsRef.get();
       data.docs.forEach(item=>{
-        const {postID} = item.data()
-        if (postID === `${paramID}`) {
-          console.log(item.data())
+        const {vid} = item.data()
+        if (vid === `${paramID}`) {
           setData(item.data())
         }
       })
@@ -37,21 +36,18 @@ function Edit() {
   
   return (
     <section className="create-page">
-        <article className="contact-form">
-          <h3>Edit a Post</h3>
+        <article className="contact-form ">
+          {
+            data ? <h3>Edit a Post</h3>   
+                 : <>
+                      <p className="edit-page-header">No posts were found with that ID.</p>
+                      <Link to="/" className="btn center-btn">Back Home</Link>
+                   </>
+          }
+
           {data && <PostForm 
             updating={true} 
-            // pastValues={
-            //   postTitle: data.title,
-            //   category,
-            //   tags: tags.join('')
-            //   description: shortDesc,
-            //   content: longDesc,
-            //   links: ''
-            //   phone: cellNumber,
-            //   email, 
-            //   subCategory,
-            // }
+            pastValues={data}
           />}
         </article>
     </section>

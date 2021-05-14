@@ -61,7 +61,6 @@ body {
   line-height: 1.5;
   font-size: 0.875rem;
   margin-top: 5rem;
-  overscroll-behavior-y: none;
 }
 
 ul {

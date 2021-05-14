@@ -24,7 +24,7 @@ const PostForm = ({updating, pastValues}) => {
       const dateCreated = firebase.firestore.FieldValue.serverTimestamp()
 
       await postsRef.add({...values, pid, vid, dateCreated});
-      // publishPost({...values, pid, vid});
+      publishPost({...values, pid, vid});
       setSubmitting(false);
       history.push(`/post?id=${pid}`)
     }

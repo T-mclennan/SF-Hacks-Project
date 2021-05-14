@@ -23,8 +23,8 @@ export const publishPost = ({email, vid, pid}) => {
     'email': email,
     // 'contact_link': `${baseURL}contact/`,
     'contact_link': 'https://colab-sfhacks-firebase.firebaseapp.com/contact/',
-    'delete_link': `${baseURL}delete/${vid}`,
-    'edit_link': `${baseURL}edit/${vid}`,
+    'delete_link': `${baseURL}delete?ver=${vid}`,
+    'edit_link': `${baseURL}edit?ver=${vid}`,
     'first_name': username,
     'lifecycle_stage': 'create',
     'unique_id': pid
