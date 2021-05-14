@@ -14,6 +14,7 @@ const useStyles = makeStyles({
     width,
     marginRight: margin,
     marginLeft: margin,
+
     "& .MuiOutlinedInput-input": {
       color: "hsl(205, 81%, 29%)"
     },

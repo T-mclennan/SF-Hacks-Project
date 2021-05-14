@@ -13,9 +13,9 @@ const colors = {
 
 }
 
-const PostSample = ({title, tags, description, image, date, category, postID}) => {
+const PostSample = ({title, tags, description, image, date, category, pid}) => {
   return (
-    <Link to={`/post?id=${postID}`} className="blog" key={postID}>
+    <Link to={`/post?id=${pid}`} className="blog" key={pid}>
       <article>
  
         <div className="blog-card">

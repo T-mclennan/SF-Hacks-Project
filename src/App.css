@@ -204,6 +204,13 @@ p {
   margin-bottom: 4rem;
   text-align: center;
 }
+
+.header-image {
+  /* width: 70%; */
+  width: 100%;
+  max-width: 25rem;
+}
+
 .bg-grey {
   background: var(--clr-grey-10);
 }

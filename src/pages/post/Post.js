@@ -21,11 +21,10 @@ const Post = () => {
   const postsRef = firestore.collection('post_content');
 
   const fetchPosts = async () => {
-
     const data=await postsRef.get();
     data.docs.forEach(item=>{
-      const {postID} = item.data()
-      if (postID === `${paramID}`) {
+      const {pid} = item.data()
+      if (pid === `${paramID}`) {
         setData(item.data())
       }
      })
@@ -39,18 +38,15 @@ const Post = () => {
     <section className="post-page">
       { data && <div className="post-section-center">
         <div className="section-title">
-            <h2>{data.postTitle || 'default title'}</h2>
-            <p style={{margin: '0.5rem'}}>{data.shortDesc}</p>
+            <h2>{data.title || 'default title'}</h2>
+            <p style={{margin: '0.5rem'}}>{data.description}</p>
             <span><a href={data.email} style={{textAlign: 'center'}}>{data.email} - {data.date}</a></span>
-            {data.links && data.links.replace(/\r/g, "").split(/\n/).map((link, i) => {
-              return <a href={link} key={i}>{link}</a>
-            })}
             <div className="underline"></div>
         </div>
 
         <article className="post-content">
           <div style={{width: '80%'}}>
-            <ReactMarkdown source={data.longDesc} escapeHtml={false}/>
+            <ReactMarkdown >{data.content}</ReactMarkdown>
           </div>
         </article>
 

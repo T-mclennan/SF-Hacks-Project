@@ -61,7 +61,6 @@ const ContactForm = ({updating, pastValues}) => {
     {({isSubmitting, values, touched, errors}) => (
 
         <Form >
-          <h3>get in touch</h3>
           <Box margin={3}>
             <CustomInput type="text" name="name" label="Name*"/>
           </Box>

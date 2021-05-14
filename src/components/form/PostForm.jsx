@@ -1,68 +1,50 @@
 import React from 'react';
 import {Formik, Form} from 'formik';
 import { v4 as uuidv4 } from 'uuid';
-import {Button, LinearProgress,} from '@material-ui/core';
+import { LinearProgress,} from '@material-ui/core';
 import CustomInput from './CustomInput'
 import CustomSelect from './CustomSelect'
 import Box from '@material-ui/core/Box';
-import {categories, subCategories} from '../../constants/selectOptions'
+import {categories } from '../../constants/selectOptions'
 import { useHistory } from "react-router-dom";
+import {publishPost} from '../../api'
 import 'firebase/firestore';
+import firebase from "firebase/app";
 import {firestore} from '../../firebase/index'
 
 
 const PostForm = ({updating, pastValues}) => {
-
   
   const postsRef = firestore.collection('post_content');
   const history = useHistory();
-  const size = window.innerWidth >= 500 ? 'normal' : 'small';
 
+    const publishNewForm = async (values, {setSubmitting}) => {
+      const pid = uuidv4();
+      const vid = uuidv4()
+      const dateCreated = firebase.firestore.FieldValue.serverTimestamp()
 
-    const submitForm = async (values, {setSubmitting}) => {
-      console.log(values)
-      const id = uuidv4();
-      const veri = uuidv4()
-      // const alternateValues = {
-      //   postID: id,
-      //   veriToken: veri,
-      //   postTitle: title,
-      //   category,
-      //   tags: tags ? tags.split(' ') : [],
-      //   shortDesc: description,
-      //   longDesc: content,
-      //   externalLinks: links ? links.replace(/\r/g, "").split(/\n/) : [],
-      //   cellNumber: phone,
-      //   email, 
-      //   subCategory,
-      //   date: new Date().toDateString().slice(4,15)
-      // }
-
-      await postsRef.add({...values, postID: id, veriToken: veri});
-      // if (!updating) {
-      //   await sendEmailLink(email,
-      //   `https:\colab-sfhacks-firebase.web.app\edit?${veri}`,
-      //   `https:\colab-sfhacks-firebase.web.app\delete?${veri}`
-      // )}
+      await postsRef.add({...values, pid, vid, dateCreated});
+      // publishPost({...values, pid, vid});
       setSubmitting(false);
-      history.push(`/post?id=${id}`)
+      history.push(`/post?id=${pid}`)
     }
 
-  // const updateForm = () => {
-  //   console.log('updating!!!!')
-  // }
+    const updateOldForm = async (values, {setSubmitting}) => {
+      console.log('updating!!!!')
+      setSubmitting(false);
+    }
+
+    const submitForm = updating ? updateOldForm : publishNewForm;
 
   return (<Formik
     initialValues={pastValues || {
       title: '',
       email: '',
       description: '',
-      message: '',
       content: '',
       category: '',
       phone: '',
       tags: '',
-      links: '',
     }}
 
     validate={(values) => {
@@ -95,10 +77,9 @@ const PostForm = ({updating, pastValues}) => {
 
         <Form style={{marginTop: '2rem', marginBottom: '2rem'}}>
 
-          {size === 'normal' && 
           <Box  margin={3}>
             <CustomSelect type="text" name="category" label="Category*" options={categories}/>
-          </Box> }
+          </Box> 
 
           <Box margin={3}>
             <CustomInput type="text" name="title" label="Title*"/>
@@ -109,7 +90,7 @@ const PostForm = ({updating, pastValues}) => {
           </Box>
 
           <Box margin={3}>
-            <CustomInput type="text" name="content" label="Content* (Markdown)" multiline rows={6}/>
+            <CustomInput type="text" name="content" label="Content* (Markdown)" multiline rows={7}/>
           </Box>
 
           <Box margin={3}>
@@ -126,7 +107,9 @@ const PostForm = ({updating, pastValues}) => {
 
           {isSubmitting && <LinearProgress />}
           <Box margin={3}>
-            <button onClick={submitForm} disabled={isSubmitting} className="submit-btn btn">Submit Post</button>
+            <button type="submit" disabled={isSubmitting} className="submit-btn btn">
+              {updating ? 'Update Post' :'Submit Post'}
+              </button>
           </Box>
         </Form>
     )}
