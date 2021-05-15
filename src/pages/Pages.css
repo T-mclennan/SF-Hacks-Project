@@ -225,6 +225,15 @@
   font-size: 1.45rem;
 }
 
+.loadingScreen {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-primary-2);
+}
+
 /**** BROWSE PAGE *****/
 .browse-page {
   display: flex;
