@@ -24,14 +24,13 @@ const data = [
   },
 ]
 
-// const tempLinks = data.map(link => {
-//   return (
-//     <li key={link.id}>
-//       <Link to={link.url}>{link.text}</Link>
-//     </li>
-//   )
-// })
-
+/**
+ * links is a factory function that generates an li with navbar links.
+ * @function
+ * @param {string} props.styleClass - applies different list styling for sidebar component
+ * @param {function} props.toggle - opens and closes the sidebar
+ * @returns {JSX.element} 
+ */
 const links = ({ styleClass, toggle }) => {
   return (
     <ul className={`page-links ${styleClass ? styleClass : ""}`}>
@@ -40,8 +39,8 @@ const links = ({ styleClass, toggle }) => {
         return (
           <li key={link.id}>
             {toggle ? 
-              <Link to={link.url} onClick={() => toggle()}>{link.text}</Link> :
-              <Link to={link.url} >{link.text}</Link>
+              <Link data-test="component-sidebar-link" to={link.url} onClick={() => toggle()}>{link.text}</Link> :
+              <Link data-test="component-navbar-link"to={link.url} >{link.text}</Link>
             }
           </li>
         )

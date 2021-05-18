@@ -5,6 +5,12 @@ import { FaAlignRight } from "react-icons/fa"
 import PageLinks from "../constants/links"
 import './Navbar.css'
 
+/** 
+ * Navbar Component
+ * @function Navbar - Menu component with a toggle input for controlling sidebar state.
+ * @param {object} props - React Props
+ * @returns {JSX.Element} - Rendered component
+*/
 const Navbar = ({toggleSidebar}) => {
 
   const history = useHistory();

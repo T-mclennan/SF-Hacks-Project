@@ -15,10 +15,7 @@ import {firestore} from '../../firebase/index'
 
 const PostForm = ({updating, pastValues}) => {
   
-  console.log('*** PAST VALUES: ')
-  console.log(pastValues)
   const postsRef = firestore.collection('post_content');
-
   const history = useHistory();
 
     const publishNewForm = async (values, {setSubmitting}) => {
@@ -32,7 +29,7 @@ const PostForm = ({updating, pastValues}) => {
       history.push(`/post?id=${pid}`)
     }
 
-    const updateOldForm = async (values, {setSubmitting}) => {
+    const updateOldForm = (values, {setSubmitting}) => {
       postsRef.where("pid", "==", values.pid)
       .get()
       .then(function(querySnapshot) {
@@ -40,9 +37,11 @@ const PostForm = ({updating, pastValues}) => {
               console.log(doc.id, " => ", doc.data());
               doc.ref.update(values)
           });
-      })
-      setSubmitting(false);
-      history.push(`/post?id=${values.pid}`)
+      }).then(() => {
+        setSubmitting(false);
+        history.push(`/post?id=${values.pid}`)
+      }) 
+      .catch(e => console.error(e))
     }
 
     const submitForm = updating ? updateOldForm : publishNewForm;
