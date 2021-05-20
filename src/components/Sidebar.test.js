@@ -1,10 +1,9 @@
 import React from 'react';
-import Enzyme, {shallow} from 'enzyme';
-import EnzymeAdapter from '@wojtekmaj/enzyme-adapter-react-17'; 
+import {shallow} from 'enzyme';
 import Sidebar from './Sidebar';
 import {findByTestAttr, checkProps} from '../../test/testUtils';
-
-Enzyme.configure({adapter: new EnzymeAdapter()})
+  
+const defaultProps = {isOpen: true};
 
 /**
  * Factory function to create a ShallowWrapper for the Sidebar component. 
@@ -12,8 +11,10 @@ Enzyme.configure({adapter: new EnzymeAdapter()})
  * @param {object} props - component props specific to this setup
  * @returns {ShallowWrapper}
  */
-const setup = (props={isOpen: true}) => {
-  return shallow(<Sidebar {...props}/>)
+const setup = (props={}) => {
+
+  const setupProps = {...defaultProps, ...props};
+  return shallow(<Sidebar {...setupProps}/>)
 }
 
 test('renders without error', () => {
@@ -24,15 +25,14 @@ test('renders without error', () => {
 
 test('shows sidebar when isOpen is true', () => {
   const wrapper = setup({isOpen: true});
-  const component = findByTestAttr(wrapper, 'component-sidebar');
-  // const message = findByTestAttr(wrapper, 'component-message')
-  // expect(component.text()).toBe('');
+  const visibleSidebar = wrapper.find('.show-sidebar')
+  expect(visibleSidebar.length).toBe(1);
 })
 
 test('hides sidebar when isOpen is false', () => {
   const wrapper = setup({isOpen: false});
-  // const component = findByTestAttr(wrapper, 'component-sidebar');
-  // expect(component.text()).toBe('');
+  const visibleSidebar = wrapper.find('.show-sidebar')
+  expect(visibleSidebar.length).toBe(0);
 })
 
 test('does not throw an error with expected props', () => {
