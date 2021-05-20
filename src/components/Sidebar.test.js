@@ -39,3 +39,11 @@ test('does not throw an error with expected props', () => {
   const expectedProps = {isOpen: true, toggle: () => {}}
   checkProps(Sidebar, expectedProps);
 })
+
+test('clicking on x closes the sidebar', () => {
+  const wrapper = setup({isOpen: false});
+  const closeButton = findByTestAttr(wrapper, 'component-close-button');
+  closeButton.simulate('click');
+  const visibleSidebar = wrapper.find('.show-sidebar')
+  expect(visibleSidebar.length).toBe(0);
+})
