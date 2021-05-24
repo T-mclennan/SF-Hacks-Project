@@ -250,7 +250,8 @@
   align-items: center;
   height: 4rem;
   width: 100%;
-  background-color: thistle;
+  margin: 0.5rem;
+  /* background-color: thistle; */
 }
 
 .browse-content-container {
@@ -259,6 +260,17 @@
   overflow-y: scroll; */
   max-width: 50rem;
   width: 100%;
+}
+
+.browse-title {
+  display: none;
+  margin-right: 4rem;
+}
+
+@media (min-width: 620px) {
+  .browse-title {
+    display: inline-block;
+  }
 }
 
 /***** ABOUT PAGE ******/
