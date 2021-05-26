@@ -4,12 +4,12 @@ import './PostSample.css'
 
 
 const colors = {
-  projects: '',
-  people: '',
-  paid: '',
-  mentorship: '',
-  study: '',
-  misc: ''
+  projects: 'rgb(111, 31, 160)',
+  people: 'rgb(4, 120, 182)',
+  paid: 'rgb(1, 148, 104)',
+  mentorship: 'rgb(235, 137, 18)',
+  study: 'rgb(189, 72, 4)',
+  misc: 'rgb(110, 7, 15)'
 
 }
 
@@ -17,7 +17,9 @@ const PostSample = ({title, tags, description, image, date, category, pid}) => {
   return (
     <Link to={`/post?id=${pid}`} className="blog" key={pid}>
       <article>
- 
+        <div className="blog-tag" style={{backgroundColor: colors[`${category}`]}}>
+          {category}
+        </div>
         <div className="blog-card">
           <div className="blog-header-container">
 

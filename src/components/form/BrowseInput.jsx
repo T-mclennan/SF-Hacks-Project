@@ -11,36 +11,41 @@ const inputWidth = window.innerWidth >= 620 ? 'auto' : '100%'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    // margin: theme.spacing(5),
     minWidth: 300,
     width: inputWidth,
     "& .MuiOutlinedInput-input": {
-      color: "hsl(205, 81%, 29%)"
+      color: "hsl(206, 100%, 94%)"
     },
     "& .MuiInputLabel-root": {
-      color: "hsl(205, 81%, 29%)"
+      color: "hsl(206, 100%, 94%)"
     },
     "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-      borderColor: "hsl(205, 81%, 29%)"
+      borderColor: "hsl(206, 100%, 94%)"
     },
     "&:hover .MuiOutlinedInput-input": {
-      color: "hsl(205, 81%, 29%)"
+      color: "hsl(206, 100%, 94%)"
     },
     "&:hover .MuiInputLabel-root": {
-      color: "hsl(205, 81%, 29%)"
+      color: "hsl(206, 100%, 94%)"
     },
     "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-      borderColor: "hsl(205, 81%, 29%)"
+      borderColor: "hsl(206, 100%, 94%)"
     },
     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-input": {
-      color: "hsl(205, 81%, 29%)"
+      color: "hsl(206, 100%, 94%)"
     },
     "& .MuiInputLabel-root.Mui-focused": {
-      color: "hsl(205, 81%, 29%)"
+      color: "hsl(206, 100%, 94%)"
     },
     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-      borderColor: "hsl(205, 81%, 29%)"
+      borderColor: "hsl(206, 100%, 94%)"
+    },
+
+    "& .MuiSvgIcon-root": {
+      fill: "hsl(206, 100%, 94%)"
     }
+
+
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -60,7 +65,7 @@ function BrowseInput({updateCategory}) {
 
   return (
       <div className="browse-navbox">
-        <h3 className="browse-title">Filter by category:</h3>
+        <h3 className="browse-title light">Filter by category:</h3>
         <FormControl variant="outlined" className={classes.formControl} px={4} >
           <InputLabel id="demo-simple-select-outlined-label">Category</InputLabel>
           <Select

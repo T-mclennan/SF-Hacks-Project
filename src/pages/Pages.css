@@ -4,7 +4,27 @@
 .create-page,
 .contact-page {
   /* background: var(--clr-grey-5); */
-  background: rgb(206, 212, 240);
+  /* background: rgb(206, 212, 240); */
+  background-image: repeating-linear-gradient(
+      132deg,
+      rgba(21, 7, 113, 0.05) 0px,
+      rgba(21, 7, 113, 0.05) 1px,
+      transparent 1px,
+      transparent 9px
+    ),
+    repeating-linear-gradient(
+      222deg,
+      rgba(21, 7, 113, 0.05) 0px,
+      rgba(21, 7, 113, 0.05) 1px,
+      transparent 1px,
+      transparent 9px
+    ),
+    linear-gradient(
+      177deg,
+      rgb(10, 73, 117),
+      rgb(161, 174, 233),
+      rgb(206, 212, 240)
+    );
   display: grid;
   place-items: center;
   padding: 5rem 0;
@@ -42,6 +62,11 @@
   min-height: 15rem;
   max-width: 40rem;
 }
+
+.contact-image {
+  height: 10rem;
+}
+
 .contact-form:hover {
   box-shadow: var(--dark-shadow);
 }
@@ -250,8 +275,7 @@
   align-items: center;
   height: 4rem;
   width: 100%;
-  margin: 0.5rem;
-  /* background-color: thistle; */
+  margin: 1rem;
 }
 
 .browse-content-container {

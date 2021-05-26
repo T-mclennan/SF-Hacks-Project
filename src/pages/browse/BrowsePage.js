@@ -10,7 +10,6 @@ function BrowsePage() {
   const [totalPosts, setTotalPosts] = useState([]);
   const [postList, setPostList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [category, setCategory] = useState(null)
 
   const postsRef = firestore.collection('post_content');
 
@@ -25,7 +24,6 @@ function BrowsePage() {
   }
 
   const updateCategory = (category) => {
-    setCategory(category);
     const filteredList = totalPosts.filter((post) => {
       return post.category === category;
     })

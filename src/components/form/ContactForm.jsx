@@ -60,7 +60,7 @@ const ContactForm = ({updating, pastValues}) => {
   >
     {({isSubmitting, values, touched, errors}) => (
 
-        <Form >
+        <Form style={{marginTop: '2rem', marginBottom: '2rem'}}>
           <Box margin={3}>
             <CustomInput type="text" name="name" label="Name*"/>
           </Box>
