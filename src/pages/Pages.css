@@ -265,7 +265,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 0;
+  padding: 0 0.5rem;
 }
 
 .browse-navbox {
@@ -279,7 +279,7 @@
 }
 
 .browse-content-container {
-  padding-top: 2rem;
+  padding-top: 1rem;
   /* height: 60vh;
   overflow-y: scroll; */
   max-width: 50rem;
@@ -294,6 +294,14 @@
 @media (min-width: 620px) {
   .browse-title {
     display: inline-block;
+  }
+
+  .browse-content-container {
+    padding-top: 2rem;
+  }
+
+  .browse-page {
+    padding: 0 1rem;
   }
 }
 

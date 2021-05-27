@@ -19,13 +19,6 @@
   justify-content: flex-start;
 }
 
-/* .blog article {
-  height: 100%;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 15fr;
-} */
-
 .blog article {
   display: grid;
   grid-template-rows: 1fr 5fr;
@@ -43,8 +36,6 @@
   color: whitesmoke;
   border-radius: var(--radius);
   border: 1px solid white;
-  /* writing-mode: vertical-rl;
-  transform: rotate(180deg); */
   width: 100%;
   display: flex;
   justify-content: center;
