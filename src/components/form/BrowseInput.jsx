@@ -9,6 +9,8 @@ import '../../pages/Pages.css';
 
 const inputWidth = window.innerWidth >= 620 ? 'auto' : '100%'
 
+const browseCategories = [{value: 'all', label: 'All Categories'}, ...categories];
+
 const useStyles = makeStyles((theme) => ({
   formControl: {
     minWidth: 300,
@@ -76,7 +78,7 @@ function BrowseInput({updateCategory}) {
             label="Category"
             fullWidth
           >
-          {categories.map((option) => (
+          {browseCategories.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
               </MenuItem>

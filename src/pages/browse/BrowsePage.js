@@ -25,7 +25,7 @@ function BrowsePage() {
 
   const updateCategory = (category) => {
     const filteredList = totalPosts.filter((post) => {
-      return post.category === category;
+      return category === 'all' || post.category === category;
     })
     setPostList(filteredList);
   }
