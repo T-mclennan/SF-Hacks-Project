@@ -5,16 +5,6 @@ import '../Pages.css'
 
 function CreatePage() {
 
-  const mockData = {
-    title: 'Some Post Title!',
-    email: 'myEmail@mail.sfsu.edu',
-    description: 'This is my mockup post',
-    content: 'Content, content content',
-    category: 'projects',
-    phone: '(415) 222-3333',
-    tags: 'tag1',
-  }
-
   return (
     
     <section className="create-page">

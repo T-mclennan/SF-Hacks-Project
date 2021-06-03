@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderImage from '../../assets/hero-img.svg';
 import TextLoop from "react-text-loop";
-import {TextLoopValues} from '../../constants/config';
+import {TextLoopValues} from '../../constants';
 import { useHistory } from "react-router-dom";
 import './Landing.css';
 

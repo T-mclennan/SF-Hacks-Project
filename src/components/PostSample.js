@@ -1,23 +1,28 @@
+import { light } from "@material-ui/core/styles/createPalette"
 import React from "react"
 import { Link } from "react-router-dom"
+import {colors} from '../constants'
+
 import './PostSample.css'
 
 
-const colors = {
-  projects: 'rgb(111, 31, 160)',
-  people: 'rgb(4, 120, 182)',
-  paid: 'rgb(1, 148, 104)',
-  mentorship: 'rgb(235, 137, 18)',
-  study: 'rgb(189, 72, 4)',
-  misc: 'rgb(110, 7, 15)'
-
-}
+// const colors = {
+//   projects: 'rgb(111, 31, 160)',
+//   people: 'rgb(4, 120, 182)',
+//   paid: 'rgb(1, 148, 104)',
+//   mentorship: 'rgb(235, 137, 18)',
+//   study: 'rgb(189, 72, 4)',
+//   misc: 'rgb(110, 7, 15)'
+// }
 
 const PostSample = ({title, tags, description, image, date, category, pid}) => {
+  const {light, dark} = colors[`${category}`];
   return (
     <Link to={`/post?id=${pid}`} className="blog" key={pid}>
       <article>
-        <div className="blog-tag" style={{backgroundColor: colors[`${category}`]}}>
+        <div className="blog-tag" style={
+          // {backgroundColor: colors[`${category}`]}
+          {backgroundImage: `linear-gradient(115deg, ${dark} 0%, ${light} 74%)`}}>
           {category}
         </div>
         <div className="blog-card">
