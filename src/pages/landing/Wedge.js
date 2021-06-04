@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderImage from '../../assets/add-note.svg';
+import HeaderImage from '../../assets/collab.svg';
 import { useHistory } from "react-router-dom";
 import './Landing.css';
 

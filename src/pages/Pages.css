@@ -74,6 +74,11 @@
   margin-bottom: 1rem;
 }
 
+.create-image {
+  height: 10rem;
+  margin-bottom: 1rem;
+}
+
 .contact-form:hover {
   box-shadow: var(--dark-shadow);
 }
