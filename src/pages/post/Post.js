@@ -1,6 +1,7 @@
 import React, {useLayoutEffect, useState} from 'react'
 import { Link, useLocation} from "react-router-dom";
 import ReactMarkdown from "react-markdown"
+import Loader from 'react-loader-spinner';
 import {firestore} from '../../firebase/index'
 import HeaderContainer from '../../components/HeaderContainer'
 
@@ -17,6 +18,7 @@ const Post = () => {
 
   const [data, setData] = useState(null)
   const [postDate, setPostDate] = useState(null)
+  const [isLoading, setIsLoading] = useState(false);
 
   //Fetch parameter passed in through URL
   let paramQuery = useQuery();
@@ -26,6 +28,7 @@ const Post = () => {
   const postsRef = firestore.collection('post_content');
 
   const fetchPosts = async () => {
+    setIsLoading(true);
     const data=await postsRef.get();
     data.docs.forEach(item=>{
       const {pid, dateCreated} = item.data()
@@ -34,6 +37,7 @@ const Post = () => {
         setPostDate(dateCreated.toDate().toLocaleDateString())
       }
      })
+     setIsLoading(false);
   }
 
   useLayoutEffect(() => {
@@ -70,27 +74,12 @@ const Post = () => {
         </article>
         </>
       }
-      {/* { data && <div className="post-section-center">
-        <div className="section-title">
-            <h2>{data.title || 'default title'}</h2>
-            <p style={{margin: '0.5rem'}}>{data.description}</p>
-            <span><a href={data.email} style={{textAlign: 'center'}}>{data.email} - {data.date}</a></span>
-            <div className="underline"></div>
-        </div>
 
-        <article className="post-content">
-          <div style={{width: '80%'}}>
-            <ReactMarkdown >{data.content}</ReactMarkdown>
-          </div>
-        </article>
-
-        <div className="post-tags">
-          {data.tags && data.tags.split(' ').map((tag, i) => {
-            return <span key={i}>{tag}</span>
-          })}
+      {isLoading && 
+        <div className="loadingScreen">
+            <Loader type="ThreeDots" color="hsl(205, 84%, 25%)" height={80} width={80} margin="auto"/>
         </div>
-        <Link to="/browse" className="btn center-btn">Back to Posts</Link>
-      </div> } */}
+      }
     </section>
   )
 }
