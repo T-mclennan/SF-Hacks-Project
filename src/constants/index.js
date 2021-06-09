@@ -15,7 +15,7 @@ export const colors = {
   paid: {light: '#FFD200', dark: '#F7971E'}, //yellow
   mentorship: {light: '#ed8608', dark: '#fc4a1a'}, //orange
   study: {light: '#03c44d', dark: '#11998e'}, //green
-  misc: {light: 'rgb(110, 7, 15)', dark: 'rgb(110, 7, 15)'}
+  misc: {light: 'rgb(162, 78, 241)', dark: 'rgb(80, 18, 138)'} //purple
 }
 
 export const aboutContent = [

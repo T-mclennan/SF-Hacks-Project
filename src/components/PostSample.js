@@ -1,5 +1,5 @@
-import { light } from "@material-ui/core/styles/createPalette"
 import React from "react"
+import ReactMarkdown from "react-markdown"
 import { Link } from "react-router-dom"
 import {colors} from '../constants'
 
@@ -15,29 +15,27 @@ import './PostSample.css'
 //   misc: 'rgb(110, 7, 15)'
 // }
 
-const PostSample = ({title, tags, description, image, date, category, pid}) => {
+const PostSample = ({title, tags, content, category, pid}) => {
   const {light, dark} = colors[`${category}`];
   return (
     <Link to={`/post?id=${pid}`} className="blog" key={pid}>
       <article>
         <div className="blog-tag" style={
-          // {backgroundColor: colors[`${category}`]}
           {backgroundImage: `linear-gradient(115deg, ${dark} 0%, ${light} 74%)`}}>
           {category}
         </div>
         <div className="blog-card">
-          <div className="blog-header-container">
 
-          </div>
           <h2 style={{color: 'hsl(204, 77%, 34%)'}}>{title || 'default title'}</h2>
-          <h4>{description}</h4>
+          <div className="description-container">
+            <p className="blog-description">{content}</p>
+          </div>
           <div className="blog-footer">
-          <div className="post-tags">
-            {tags && tags.split(' ').map((tag, i) => {
-              return <span key={i}>{tag}</span>
-            })}
-        </div>
-            <p>{date}</p>
+            <div className="post-tags">
+              {tags && tags.split(' ').map((tag, i) => {
+                return <span key={i}>{tag}</span>
+              })}
+            </div>
           </div>
         </div>
       </article>

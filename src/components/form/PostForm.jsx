@@ -50,7 +50,7 @@ const PostForm = ({updating, pastValues}) => {
     initialValues={pastValues || {
       title: '',
       email: '',
-      description: '',
+      // description: '',
       content: '',
       category: '',
       phone: '',
@@ -71,12 +71,12 @@ const PostForm = ({updating, pastValues}) => {
         errors.title = 'Please enter a title.';
       }
 
-      if (!values.description) {
-        errors.description = 'Please enter a short description.';
-      }
+      // if (!values.description) {
+      //   errors.description = 'Please enter a short description.';
+      // }
 
       if (!values.content) {
-        errors.content = 'Please enter some content for the post.';
+        errors.content = 'Please enter content for this post.';
       }
 
       return errors;
@@ -92,27 +92,27 @@ const PostForm = ({updating, pastValues}) => {
           </Box> 
 
           <Box margin={3}>
-            <CustomInput type="text" name="title" label="Title*"/>
+            <CustomInput type="text" name="title" label="Title*" inputProps={{maxLength: 75}}/>
           </Box>
 
-          <Box margin={3}>
+          {/* <Box margin={3}>
             <CustomInput type="text" name="description" label="Description*"/>
+          </Box> */}
+
+          <Box margin={3}>
+            <CustomInput type="text" name="content" label="Content* (Markdown)" multiline rows={10} inputProps={{maxLength: 6000}}/>
           </Box>
 
           <Box margin={3}>
-            <CustomInput type="text" name="content" label="Content* (Markdown)" multiline rows={7}/>
+            <CustomInput type="email" name="email" label="Email*" inputProps={{maxLength: 50}}/>
           </Box>
 
           <Box margin={3}>
-            <CustomInput type="email" name="email" label="Email*"/>
+            <CustomInput type="text" name="tags" label="Tags (optional)" inputProps={{maxLength: 30}}/>
           </Box>
 
           <Box margin={3}>
-            <CustomInput type="text" name="tags" label="Tags (optional)"/>
-          </Box>
-
-          <Box margin={3}>
-            <CustomInput type="text" name="phone" label="Phone Number (optional)"/>
+            <CustomInput type="text" name="phone" label="Phone Number (optional)" inputProps={{maxLength: 15}}/>
           </Box>
 
           {isSubmitting && <LinearProgress />}

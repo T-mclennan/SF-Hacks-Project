@@ -5,7 +5,7 @@ export const categories = [
   },
   {
     value: 'projects',
-    label: 'Seeking project',
+    label: 'Seeking Project',
   },
   {
     value: 'paid',

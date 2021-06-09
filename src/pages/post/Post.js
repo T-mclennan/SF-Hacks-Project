@@ -63,7 +63,7 @@ const Post = () => {
         </HeaderContainer>
         <article className="post-wrapper">
           <div className="post-content">
-            {data.content}
+            <ReactMarkdown source={data.content}/>
           </div>
           <div className="post-tags">
             {data.tags && data.tags.split(' ').map((tag, i) => {

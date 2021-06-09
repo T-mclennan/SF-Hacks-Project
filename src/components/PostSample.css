@@ -79,6 +79,19 @@ h4 {
   font-size: 0.85rem;
 }
 
+.description-container {
+  margin: 0.75rem 0rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.blog-description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 1.1rem;
+}
+
 .blog-section-center {
   max-width: 900px;
 }
@@ -100,7 +113,7 @@ h4 {
   }
 
   .blog-card {
-    padding: 2rem 3rem;
+    padding: 1.5rem 2rem;
   }
 
   .blog-img {
@@ -121,11 +134,5 @@ h4 {
 
   .blog-wrapper {
     flex-direction: column;
-  }
-}
-@media screen and (min-width: 850px) {
-  .blog-img {
-    /* height: 13.75rem; */
-    height: 17.5rem;
   }
 }

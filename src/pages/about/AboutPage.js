@@ -28,8 +28,8 @@ function About() {
       <div className="about-content-wrapper">
         <article className="about-content">
           {
-            aboutContent.map(({question, content}) => (
-              <ContentParagraph question={question} content={content}/>
+            aboutContent.map(({question, content}, i) => (
+              <ContentParagraph key={i} question={question} content={content}/>
             ))
           }
         </article>
