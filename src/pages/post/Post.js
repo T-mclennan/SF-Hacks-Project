@@ -61,8 +61,8 @@ const Post = () => {
               </span>
             </div>
         </HeaderContainer>
-        <article className="post-content">
-          <div style={{width: '80%'}}>
+        <article className="post-wrapper">
+          <div className="post-content">
             {data.content}
           </div>
           <div className="post-tags">
@@ -70,7 +70,7 @@ const Post = () => {
               return <span key={i}>{tag}</span>
             })}
           </div>
-          <Link to="/browse" className="btn center-btn">Back to Posts</Link>
+          <Link to="/browse" className="btn center-btn post-btn">Back to Posts</Link>
         </article>
         </>
       }
