@@ -124,7 +124,6 @@
 .post-img {
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
-  /* height: 15rem; */
   height: 17.5rem;
 }
 .post-card {
@@ -180,7 +179,6 @@
   align-items: center;
   margin: 0px auto;
   max-width: 900px;
-  /* background-color: cornsilk; */
 }
 
 .post-content {
@@ -203,7 +201,6 @@
 
 /**** EDIT PAGE *****/
 .edit-page-header {
-  /* color: rgb(80, 18, 138); */
   letter-spacing: var(--spacing);
   line-height: 1.25;
   margin-top: 0.75rem;

@@ -22,7 +22,7 @@ function About() {
   return (
     <section className="about-page">
       <article className="about-header-box">
-        <Title title="About CoLabs" mb='1rem'/>
+        <Title title="About CoLabs" style="light" mb='1rem'/>
         <img src={HeaderImage} className="header-image" alt="two students collaborating"/>
       </article>
       <div className="about-content-wrapper">

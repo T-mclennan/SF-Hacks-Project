@@ -84,11 +84,13 @@ h4 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 5rem;
 }
 
 .blog-description {
-  text-overflow: ellipsis;
-  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  /* overflow: hidden; */
   font-size: 1.1rem;
 }
 

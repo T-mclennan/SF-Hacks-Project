@@ -50,7 +50,6 @@ const PostForm = ({updating, pastValues}) => {
     initialValues={pastValues || {
       title: '',
       email: '',
-      // description: '',
       content: '',
       category: '',
       phone: '',
@@ -70,10 +69,6 @@ const PostForm = ({updating, pastValues}) => {
       if (!values.title) {
         errors.title = 'Please enter a title.';
       }
-
-      // if (!values.description) {
-      //   errors.description = 'Please enter a short description.';
-      // }
 
       if (!values.content) {
         errors.content = 'Please enter content for this post.';
@@ -95,12 +90,8 @@ const PostForm = ({updating, pastValues}) => {
             <CustomInput type="text" name="title" label="Title*" inputProps={{maxLength: 75}}/>
           </Box>
 
-          {/* <Box margin={3}>
-            <CustomInput type="text" name="description" label="Description*"/>
-          </Box> */}
-
           <Box margin={3}>
-            <CustomInput type="text" name="content" label="Content* (Markdown)" multiline rows={10} inputProps={{maxLength: 6000}}/>
+            <CustomInput type="text" name="content" label="Content*" multiline rows={10} inputProps={{maxLength: 6000}}/>
           </Box>
 
           <Box margin={3}>

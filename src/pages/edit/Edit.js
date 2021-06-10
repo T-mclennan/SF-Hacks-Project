@@ -40,7 +40,7 @@ function Edit() {
     
   const editFormContent = 
     <>
-      <Title title="Edit a Post" mb='1rem'/>
+      <Title title="Edit a Post" mb='1rem' style="light"/>
       <article className="contact-form ">
         <PostForm 
           updating={true} 

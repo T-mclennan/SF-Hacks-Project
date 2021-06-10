@@ -7,7 +7,7 @@ function ContactPage() {
   return (
     <section className="contact-page">
       <img src={ContactImage} className="contact-image" alt="sending mail"/>
-      <Title title="Contact Our Team" mb='1rem'/>
+      <Title title="Contact Our Team" mb='1rem' style="light"/>
       <article className="contact-form" >
         <ContactForm />
       </article>

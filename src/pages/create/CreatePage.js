@@ -10,7 +10,7 @@ function CreatePage() {
     
     <section className="create-page">
         <img src={CreateImage} className="contact-image" alt="Working together onine"/>
-        <Title title="Create a New Post" mb='1rem'/>
+        <Title title="Create a New Post" mb='1rem' style="light"/>
         <article className="contact-form">
           <PostForm />
         </article>
