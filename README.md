@@ -1,18 +1,19 @@
 ## CoLabs: Hackathon project from the weekend 3/5/2021-3/7/2021:
 
-Designed, coded and deployed over the course of 1-2 days. Some UI elements were completed after the fact.  
+Designed, coded and deployed over the course of 1-2 days. Remaining styling for Browse / Page components added after the fact.
 
 <img width="1280" alt="Screen Shot 2021-03-07 at 11 15 16 PM" src="https://user-images.githubusercontent.com/43154475/110576420-9a6c0980-8115-11eb-931b-9992684a8a58.png">
 
 
 ___________________________________________________________
+#### Writeup form the hackathon: 
 
 ## Inspiration: 
 Our goal was to create a platform that energizes the CS student community and encourages collaboration and dialog.
 The path to becoming a professional programmer can be overwhelming and intimidating at first. Sharing this process with other people makes more enjoyable, and better prepares students for working with others in a professional environments. Our project strives to connect people who can help make the learning process a mutually enjoyable one on the road to becoming better developers. 
  
 ## What it does:
-A model use case is someone who has a great idea for a project, but is seeking help with certain aspects of the implementation. Likewise someone with a specific skillset might be interested in finding a project where those skills could go to use.  This application acts as a bulletin board where anyone interested can share goals, ideas, resources, and make connections. Other use cases could include forming study groups, finding people to practice technical and behavioral interviews, exchanging programming books, finding people to do small paid gigs.  we aimed to create something like a miniature, casual craigslist but centered on the beginner programming community. 
+A model user story is someone who has a great idea for a project, but is seeking help with certain aspects of the implementation. Likewise someone with a specific skillset might be interested in finding a project where those skills could go to use.  This application acts as a bulletin board where anyone interested can share goals, ideas, resources, and make connections. Other use cases could include forming study groups, finding people to practice technical and behavioral interviews, exchanging programming books, finding people to do small paid gigs.  we aimed to create something like a miniature, casual craigslist but centered on the beginner programming community. 
 
 The core functionality consists of either composing or browsing posts. Posts themselves are very static and have low interactivity, but are sortable and by the person browsing based on categories and other information provided. We think of a Post as being almost like an ad in the paper, or a message left on a post-it note. We aim to keep the platform very simple, but hope to have more styling than a standard message board. The main browsing page would have abbreviated version of the posts that would have some colored tagging or picture denoting its category and some high level description of content. When clicked this would navigate to a full page with all the information the user provided displayed in full. 
 
@@ -37,7 +38,7 @@ The styling for pages was made using gradientmagic.com, unsplash.com, and undraw
 
 ## Challenges we ran into:
 We really got stuck on some of the cloud infrastructure, and just flat ran out of time. 
-My teammate built a Java server with Spring to serve the static app and provide database access, but we struggled until the last minute on configuring it on cloud platforms. Falling behind stressed us out and pushed us right to the wire for submitting, which turns out was a much bigger process than we anticipated. We tried to record a video with 5 minutes left and did a pretty poor job of showing the app off. I was so flustered trying to get as much done as possible, I forgot to switch the database back from test to production. So during the demo when I submitted it was unresponsive, via going to the wrong database. We were really fatigued by the end, and logged in more hours straight on this than I ever have before. So much debugging. 
+My teammate built a Java server with Spring to serve the static pages and provide database access, but we struggled until the last minute on configuring it on cloud platforms. Falling behind stressed us out and pushed us right to the wire for submitting, which turns out was a much bigger process than we anticipated. We tried to record a video with 5 minutes left and did a pretty poor job of showing the app off. I was so flustered trying to get as much done as possible, I forgot to switch the database back from test to production. So during the demo when I submitted it was unresponsive, via going to the wrong database. We were really fatigued by the end, and logged in more hours straight on this than I ever have before. So much debugging. 
 
 ## Accomplishments that I'm proud of
 We built maybe 80% of the functionality, and like 30% of the styling. Considering how difficult debugging some of these issues was, we both feel very accomplished with what we could create in that stretch. I'm proud of the landing page, as someone who is just learning the ropes I'm really proud of how that turned out. I'm proud of Harsh for doing a great job of building the server, connecting java and firestore, and writing all the notivize logic. He was a great sport considering we got hung up on Devops and much of his effort never got successfully integrated in. We worked hard and ended with something at least, even if it wasn't what we planned.
